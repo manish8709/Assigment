@@ -7,10 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class PetstoreApiTest {
 
     public static void main(String[] args) {
-        // Set up Selenium WebDriver
+        
     	WebDriver driver = new ChromeDriver();
     	System.setProperty("webdriver,chrome,driver","C:\\selenium webdriver\\chrome driver\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-		//driver.get("https://www.flipkart.com/");
+		
 
         // Test Endpoint 1: Get pet by ID
        int petId = 1;
@@ -19,7 +19,7 @@ public class PetstoreApiTest {
         driver.get(apiUrl);
         Response response = RestAssured.get(apiUrl);
 
-        // Validate the response, you might want to use a proper assertion library here
+        
         System.out.println("Test 1: Get pet by ID");
         System.out.println(response.getBody().asString());
         System.out.println("Status Code: " + response.getStatusCode());
@@ -42,7 +42,7 @@ public class PetstoreApiTest {
         System.out.println(response.getBody().asString());
         System.out.println("Status Code: " + response.getStatusCode());
 
-        // Close the WebDriver
+       
         driver.quit();
     }
 }
